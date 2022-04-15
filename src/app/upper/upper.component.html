@@ -1,0 +1,46 @@
+<h1>simple form</h1>
+<pre>Valid : {{ simpleform.valid }}</pre>
+<pre>{{ simpleform.errors | json }}</pre>
+<pre>{{ simpleform.hasError('required') }}</pre>
+<form action="" [formGroup]="simpleform" class="main-form">
+  <label>First name</label>
+  <input type="text" formControlName="firstName" />
+  <div *ngIf="simpleform.get('firstName').valid">firstName Valid</div>
+  <div *ngIf="simpleform.get('firstName').invalid">firstName Invalid</div>
+  <pre>{{ simpleform.get('firstName').errors | json }}</pre>
+  <label>First name</label>
+  <input type="text" formControlName="lastName" />
+  <div *ngIf="simpleform.get('lastName').valid">lastName Valid</div>
+  <div *ngIf="simpleform.get('lastName').invalid">lastName Invalid</div>
+  <pre>{{ simpleform.get('lastName').errors | json }}</pre>
+</form>
+
+<form action="" [formGroup]="form" class="main-form">
+  <h4>Upper form</h4>
+  <label>First name</label>
+  <input type="text" formControlName="firstName" />
+  <div *ngIf="form.get('address').valid">Form Address Valid</div>
+  <div *ngIf="form.get('address').invalid">Form Address Invalid</div>
+
+  <!-- <app-address formControlName="address"></app-address> -->
+<app-address-input [form]="address"></app-address-input>
+
+<h2>Resultat</h2>
+<pre> {{ form.get('address').get('street').errors | json  }}</pre>
+
+
+  <p>Form:</p>
+  <pre>{{ form.value | json }}</pre>
+  <p>Form Validity</p>
+  <pre>{{ form.valid | json }}</pre>
+  <p>Form Errors</p>
+  <pre>{{ form.errors | json }}</pre>
+  <p>Controls Errors FirstName</p>
+  <pre>{{ form.get('firstName').errors | json }}</pre>
+  <p>Controls Errors address</p>
+  <pre>{{ form.get('address').errors | json }}</pre>
+
+</form>
+
+
+

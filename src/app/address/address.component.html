@@ -1,0 +1,15 @@
+<form action="" [formGroup]="form" class="sub-form">
+  <h5>Sub-form</h5>
+  <label> Street:</label>
+  <input type="text" formControlName="street" />
+  <label> City:</label>
+  <input type="text" formControlName="city" />
+  <p>Form:</p>
+  <pre>{{ form.value | json }}</pre>
+  <p>Validity</p>
+  <pre>{{ form.valid | json }}</pre>
+  <p>Errors</p>
+  <pre>{{ form.errors | json }}</pre>
+  <pre>{{ form.get('street').hasError('required') }}</pre>
+  <pre>{{ form.get('city').hasError('required') }}</pre>
+</form>

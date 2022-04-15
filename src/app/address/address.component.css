@@ -1,0 +1,9 @@
+.sub-form {
+  border: 1px dotted red;
+  padding: 10px;
+  margin: 10px;
+}
+
+input {
+  display: block;
+}
